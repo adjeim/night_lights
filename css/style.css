@@ -2,14 +2,14 @@ body {
 	background-color: #000;
 }
 
-.container {
+#container {
 	display: inline-flex;
-	/*flex-flow: row-wrap;*/
+	flex-wrap: wrap;
 }
 
 .light {
-	/*display: inline;*/
 	width: 25px;
 	height: 25px;
 	margin: 15px;
+	border-radius: 15px;	
 }
