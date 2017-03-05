@@ -12,7 +12,7 @@ function makeRandomColor() {
 }
 
 function makeLights() {
-	for ( var i = 0; i < 200; i ++) {
+	for ( var i = 0; i < 5; i ++) {
 		var container = document.getElementById('container');
 		// console.log(container);
 	  var circleColor = makeRandomColor();
@@ -25,6 +25,17 @@ function makeLights() {
 
 
 	}
+	setTimeout(makeLights, 1000);
+}
+
+function clearContainer() {
+	var container = document.getElementById('container');
+	while (container.hasChildNodes()) {   
+    container.removeChild(container.firstChild);
+	}
+
+	// setTimeout(clearContainer, 1000);
 }
 
 makeLights();
+clearContainer();
