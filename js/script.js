@@ -13,10 +13,18 @@ function makeRandomColor() {
 
 function makeLights() {
 	for ( var i = 0; i < 200; i ++) {
-		var body = document.querySelector('body');
+		var container = document.getElementById('container');
+		// console.log(container);
 	  var circleColor = makeRandomColor();
-	  // append a div to the body that has a background color of this color
+
+	  var circle = document.createElement('div');
+	  circle.style.backgroundColor =  circleColor;
+	  circle.className += 'light';
+	  // console.log(circle);
+	  container.appendChild(circle);
 
 
 	}
 }
+
+makeLights();

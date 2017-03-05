@@ -1,3 +1,15 @@
 body {
 	background-color: #000;
 }
+
+.container {
+	display: inline-flex;
+	/*flex-flow: row-wrap;*/
+}
+
+.light {
+	/*display: inline;*/
+	width: 25px;
+	height: 25px;
+	margin: 15px;
+}
