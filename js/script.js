@@ -1,3 +1,4 @@
+var go;
 
 
 function getRGB() {
@@ -12,7 +13,7 @@ function makeRandomColor() {
 }
 
 function makeLights() {
-	for ( var i = 0; i < 5; i ++) {
+	for ( var i = 0; i < 1; i ++) {
 		var container = document.getElementById('container');
 		// console.log(container);
 	  var circleColor = makeRandomColor();
@@ -25,17 +26,20 @@ function makeLights() {
 
 
 	}
-	setTimeout(makeLights, 1000);
+	go = setTimeout(makeLights, 100);
 }
 
-function clearContainer() {
-	var container = document.getElementById('container');
-	while (container.hasChildNodes()) {   
-    container.removeChild(container.firstChild);
-	}
+function stop(){
+	clearTimeout(go);
+}
 
-	// setTimeout(clearContainer, 1000);
+document.body.onkeydown = function(event){
+    var keycode =  event.keyCode;
+    if(keycode === 32){
+        stop();
+    }
 }
 
 makeLights();
-clearContainer();
+
+// Make spacebar toggle the stop and go.
