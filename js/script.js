@@ -1,4 +1,5 @@
 var go;
+var running = false;
 
 
 function getRGB() {
@@ -27,19 +28,21 @@ function makeLights() {
 
 	}
 	go = setTimeout(makeLights, 100);
+	running = true;
 }
 
 function stop(){
 	clearTimeout(go);
+	running = false;
 }
 
 document.body.onkeydown = function(event){
     var keycode =  event.keyCode;
-    if(keycode === 32){
+    if(keycode === 32 && running === true){
         stop();
+    } else {
+    	makeLights();
     }
 }
 
 makeLights();
-
-// Make spacebar toggle the stop and go.
